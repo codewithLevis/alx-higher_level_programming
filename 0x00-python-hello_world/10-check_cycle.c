@@ -14,9 +14,12 @@ int check_cycle(listint_t *list)
 	first = list->next;
 	second = list;
 
-	for (; first->next != NULL && first != NULL;
-	first = first->next->next, second = second->next)
+	for (; first->next != NULL && first != NULL;)
+	{
 		if (first == second)
 			return (1);
+		first = first->next->next
+		second = second->next;
+	}
 	return (0);
 }
