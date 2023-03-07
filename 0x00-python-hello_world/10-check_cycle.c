@@ -14,13 +14,14 @@ int check_cycle(listint_t *list)
 
 	first = list->next, second = list;
 
-	do {
+	 while (first != NULL && first->next != NULL)
+	{
 		first = first->next->next, second = second->next;
 
 		if (first == second)
 			return (1);
 
-	} while (first->next != NULL && first != NULL);
+	} 
 
 	return (0);
 }
