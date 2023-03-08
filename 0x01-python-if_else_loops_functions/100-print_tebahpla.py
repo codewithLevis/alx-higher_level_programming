@@ -6,3 +6,4 @@ while c > 96:
     else:
         i = c
     print("{}".format(chr(i)), end="")
+    c -= 1
