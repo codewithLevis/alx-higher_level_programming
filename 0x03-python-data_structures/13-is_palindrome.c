@@ -1,5 +1,4 @@
 #include "lists.h"
-#define ARR_LEN(n) n
 
 int real_palindrome(int *arr, int len);
 
@@ -33,6 +32,8 @@ int is_palindrome(listint_t **head)
 	int arr_int[ARR_LEN(i)];
 	listint_t *ptr;
 
+	if (i == 0 || i == 1)
+		return (1);
 	j = 0;
 	ptr = *head;
 
