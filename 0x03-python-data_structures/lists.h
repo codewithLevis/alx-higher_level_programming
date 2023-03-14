@@ -1,5 +1,6 @@
 #ifndef LISTS_H
 #define LISTS_H
+#define ARR_LEN(n) n
 #include <stdlib.h>
 #include <stdio.h>
 /**
