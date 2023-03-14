@@ -57,7 +57,7 @@ int real_palindrome(int *arr, int len)
 {
 	int i, j;
 
-	for(i = 0, j = len; i < j; i++, j--)
+	for (i = 0, j = len; i < j; i++, j--)
 	{
 		if (arr[i] != arr[j])
 			return (0);
