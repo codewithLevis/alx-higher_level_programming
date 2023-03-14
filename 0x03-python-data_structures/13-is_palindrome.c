@@ -1,7 +1,26 @@
 #include "lists.h"
+#define ARR_LEN(n) n
 
 int real_palindrome(int *arr, int len);
 
+/**
+*len_list - finds len of list
+*@head: start of list
+*Return: len
+*/
+int len_list(listint_t **head)
+{
+	listint_t *ptr = *head;
+	int i = 0;
+
+	while (ptr != NULL)
+	{
+		i++;
+		ptr = ptr->next;
+	}
+
+	return (i);
+}
 /**
 *is_palindrome - C that checks if a singly
 *linked list is a palindrome
@@ -10,21 +29,10 @@ int real_palindrome(int *arr, int len);
 */
 int is_palindrome(listint_t **head)
 {
-	int *arr_int, j, i;
+	int j, i = len_list(head);
+	int arr_int[ARR_LEN(i)];
 	listint_t *ptr;
 
-	ptr = *head;
-
-	i = 0;
-	while (ptr != NULL)
-	{
-		i++;
-		ptr = ptr->next;
-	}
-	arr_int = malloc(sizeof(int) * i);
-
-	if (arr_int == NULL)
-		return (0);
 	j = 0;
 	ptr = *head;
 
@@ -52,10 +60,7 @@ int real_palindrome(int *arr, int len)
 	for(i = 0, j = len; i < j; i++, j--)
 	{
 		if (arr[i] != arr[j])
-		{
-			free(arr);
 			return (0);
-		}
 	}
 	free(arr);
 	return (1);
