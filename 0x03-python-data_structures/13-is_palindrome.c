@@ -10,7 +10,7 @@ int real_palindrome(int *arr, int len);
 */
 int is_palindrome(listint_t **head)
 {
-	int *arr_int, j, k, i;
+	int *arr_int, j, i;
 	listint_t *ptr;
 
 	ptr = *head;
