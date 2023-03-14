@@ -62,6 +62,5 @@ int real_palindrome(int *arr, int len)
 		if (arr[i] != arr[j])
 			return (0);
 	}
-	free(arr);
 	return (1);
 }
