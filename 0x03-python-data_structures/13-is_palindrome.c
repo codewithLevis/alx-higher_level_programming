@@ -1,5 +1,7 @@
 #include "lists.h"
 
+int real_palindrome(int *arr, int len);
+
 /**
 *is_palindrome - C that checks if a singly
 *linked list is a palindrome
@@ -33,19 +35,28 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 		j++;
 	}
-	i = 0;
-	k = j - 1;
 
-	while (i < k)
+	return (real_palindrome(arr_int, j - 1));
+}
+
+/**
+*real_palindrome - check for palindrome
+*@arr: pointer array of ints
+*@len: position to the end of array
+*Return: 0 or 1
+*/
+int real_palindrome(int *arr, int len)
+{
+	int i, j;
+
+	for(i = 0, j = len; i < j; i++, j--)
 	{
-		if (arr_int[i] != arr_int[k])
+		if (arr[i] != arr[j])
 		{
-			free(arr_int);
+			free(arr);
 			return (0);
 		}
-		i++;
-		k--;
 	}
-	free(arr_int);
+	free(arr);
 	return (1);
 }
