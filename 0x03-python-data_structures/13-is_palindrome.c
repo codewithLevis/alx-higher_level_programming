@@ -28,9 +28,9 @@ int len_list(listint_t **head)
 */
 int is_palindrome(listint_t **head)
 {
-	int j, i = len_list(head);
-	int arr_int[ARR_LEN(i)];
 	listint_t *ptr;
+	int j, i = len_list(head);
+	int arr_int[len_list(head)];
 
 	if (i == 0 || i == 1)
 		return (1);
