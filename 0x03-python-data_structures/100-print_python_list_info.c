@@ -4,10 +4,9 @@
 #include <stdio.h>
 
 /**
- * print_python_list_info - C function that prints some
+ * print_python_list_info - prints some
  *basic info about Python lists
  * @p: python object.
- *Return: 0
  */
 void print_python_list_info(PyObject *p)
 {
@@ -18,9 +17,9 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated = %d\n", palloc);
 
 	j = 0;
-	while (i < size)
+	while (j < size)
 	{
-		printf("Element %d: ", i);
+		printf("Element %d: ", j);
 		printf("%s\n", ((PyList_GetItem(p, i))->ob_type)->tp_name);
 		i++;
 	}
