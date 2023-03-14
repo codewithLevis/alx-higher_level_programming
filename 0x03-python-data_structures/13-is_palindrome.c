@@ -13,12 +13,12 @@ int is_palindrome(listint_t **head)
 
 	ptr = *head;
 
-	while ((*head) != NULL)
+	while (ptr != NULL)
 	{
 		i++;
-		*head = (*head)->next;
+		ptr = ptr->next;
 	}
-	arr_int = malloc(sizeof(int) * (i + 1));
+	arr_int = malloc(sizeof(int) * i);
 
 	if (arr_int == NULL)
 		return (0);
@@ -33,9 +33,9 @@ int is_palindrome(listint_t **head)
 		j++;
 	}
 	i = 0;
-	k = j;
+	k = j - 1;
 
-	while (arr_int[i] && i < j / 2)
+	while (i < k)
 	{
 		if (arr_int[i] != arr_int[k])
 			return (0);
