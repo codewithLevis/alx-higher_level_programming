@@ -39,7 +39,10 @@ int is_palindrome(listint_t **head)
 	while (i < k)
 	{
 		if (arr_int[i] != arr_int[k])
+		{
+			free(arr_int);
 			return (0);
+		}
 		i++;
 		k--;
 	}
