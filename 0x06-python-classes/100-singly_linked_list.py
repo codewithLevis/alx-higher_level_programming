@@ -14,8 +14,8 @@ class Node:
         self.next_node = next_node
 
     @property
-    """getter of data"""
     def data(self):
+        """getter of data"""
         return(self._data)
 
     @data.setter
@@ -25,8 +25,8 @@ class Node:
         self._data = value
 
     @property
-    """getter of next_node"""
     def next_node(self):
+        """getter of next_node"""
         return(self._next_node)
 
     @next_node.setter
@@ -52,7 +52,7 @@ class SinglyLinkedList:
             self.head = new_node
             return
         current_node = self.head
-        while (current_node.next_node is not None) and 
+        while (current_node.next_node is not None) and
         (current_node.next_node.data < value):
             current_node = current_node.next_node
         new_node.next_node = current_node.next_node
