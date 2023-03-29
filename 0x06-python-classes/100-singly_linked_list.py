@@ -1,10 +1,20 @@
 #!/usr/bin/python3
+"""A linked list module"""
+
+
 class Node:
+    """Node structure"""
     def __init__(self, data, next_node=None):
+        """initializing node members
+        Args:
+            data: data per node
+            next_node: guide to next node
+         """
         self.data = data
         self.next_node = next_node
 
     @property
+    """getter of data"""
     def data(self):
         return(self._data)
 
@@ -15,6 +25,7 @@ class Node:
         self._data = value
 
     @property
+    """getter of next_node"""
     def next_node(self):
         return(self._next_node)
 
@@ -26,10 +37,12 @@ class Node:
 
 
 class SinglyLinkedList:
+    """creation of singly linked list"""
     def __init__(self):
         self.head = None
 
     def sorted_insert(self, value):
+        """method sorting the list"""
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
