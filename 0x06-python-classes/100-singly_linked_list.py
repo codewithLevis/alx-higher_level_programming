@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """A linked list module"""
 
 
@@ -37,6 +38,7 @@ class Node:
 class SinglyLinkedList:
     """creation of singly linked list"""
     def __init__(self):
+        """head of the nodes"""
         self.head = None
 
     def sorted_insert(self, value):
