@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+
+"""Square module: operates on square development"""
+
+
 class Square:
+    """class describing object square"""
     def __init__(self, size=0, position=(0, 0)):
+        """attributes of the square"""
         self.size = size
         self.position = position
 
@@ -32,6 +38,7 @@ class Square:
         return(self.__size ** 2)
 
     def my_print(self):
+        """Prints square based on position and size"""
         if self.__size == 0:
             print("")
         else:
