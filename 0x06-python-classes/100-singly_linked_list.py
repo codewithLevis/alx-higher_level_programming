@@ -58,6 +58,7 @@ class SinglyLinkedList:
         current_node.next_node = new_node
 
     def __str__(self):
+        """string rep of the square value"""
         nodes = []
         current_node = self.head
         while current_node is not None:

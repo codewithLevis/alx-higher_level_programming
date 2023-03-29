@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+
+"""square module"""
+
+
 class Square:
+    """function shaping a square object"""
     def __init__(self, size=0):
         self.size = size
 

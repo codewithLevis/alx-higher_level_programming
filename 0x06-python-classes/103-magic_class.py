@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Module to operate on cirles"""
 import math
 
 class MagicClass:
+    """Circle object description"""
     def __init__(self, radius=0):
         self.__radius = 0
         self.radius = radius
