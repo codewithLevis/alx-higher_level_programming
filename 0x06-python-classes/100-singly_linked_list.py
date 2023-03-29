@@ -15,7 +15,6 @@ class Node:
 
     @property
     def data(self):
-        """getter of data"""
         return(self._data)
 
     @data.setter
@@ -26,7 +25,6 @@ class Node:
 
     @property
     def next_node(self):
-        """getter of next_node"""
         return(self._next_node)
 
     @next_node.setter
@@ -42,7 +40,6 @@ class SinglyLinkedList:
         self.head = None
 
     def sorted_insert(self, value):
-        """method sorting the list"""
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
