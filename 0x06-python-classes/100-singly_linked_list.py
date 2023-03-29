@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-"""A linked list module"""
+"""Module defines a node of a singly linked list"""
 
 
 class Node:
-    """Node structure"""
+    """Node structure for singly linked lists"""
     def __init__(self, data, next_node=None):
         """initializing node members
         Args:
