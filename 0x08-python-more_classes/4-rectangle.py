@@ -1,0 +1,2 @@
+calss Rectangle:
+  pass
