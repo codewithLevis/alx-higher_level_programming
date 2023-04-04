@@ -1,4 +1,3 @@
-class Rectangle:
 #!/usr/bin/python3
 class Rectangle:
 '''This class creates the private instance attributes for 
