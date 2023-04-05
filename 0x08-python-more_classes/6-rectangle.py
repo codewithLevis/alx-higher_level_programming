@@ -7,6 +7,7 @@ class Rectangle:
     the width and height of a rectangle. Setters are used to ensure the values
     are positive integers'''
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -15,7 +16,8 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        '''Decrement the Rectangle instances each time a new instance is deleted'''
+        '''Decrement the Rectangle
+        instances each time a new instance is deleted'''
         type(self).number_of_instances -= 1
 
     @property
@@ -30,7 +32,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
- 
+
     @property
     def height(self):
         return self.__height
@@ -42,7 +44,7 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            self.__height = value    
+            self.__height = value
 
     def area(self):
         return(self.width * self.height)
@@ -52,9 +54,9 @@ class Rectangle:
             return(0)
         return(2 * (self.width + self.height))
 
-   def __str__(self):
-      if self.width == 0 or self.height == 0:
-           return("")
+    def __str__(self):
+        if self.width == 0 or self.height == 0:
+            return("")
       rectangle = ""
       for i in range(self.height):
           rectangle = "#" * self.width
