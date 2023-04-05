@@ -7,7 +7,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    def _init_(self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Initializes a rectangle"""
 
         self.width = width
@@ -71,13 +71,13 @@ class Rectangle:
                 rectangle += '\n'
         return(rectangle)
 
-    def _repr_(self):
+    def __repr__(self):
         """Returns a string representation
         of the rectangle that can be used to recreate a new instance"""
 
         return "Rectangle({}, {})".format(self._width, self._height)
 
-    def _del_(self):
+    def __del__(self):
         """Deletes an instance of a rectangle"""
 
         print("Bye rectangle...")
