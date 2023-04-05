@@ -3,25 +3,25 @@
 
 
 class Rectangle:
-'''This class creates the private instance attributes for 
-the width and height of a rectangle. Setters are used to ensure the values
-are positive integers'''
+    '''This class creates the private instance attributes for
+    the width and height of a rectangle. Setters are used to ensure the values
+    are positive integers'''
     number_of_instances = 0
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
         '''count the Rectangle instances each time a new instance is created'''
         type(self).number_of_instances += 1
-    
+
     def __del__(self):
         print("Bye rectangle...")
         '''Decrement the Rectangle instances each time a new instance is deleted'''
         type(self).number_of_instances -= 1
-        
+
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -30,11 +30,11 @@ are positive integers'''
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
-            
+ 
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -43,15 +43,15 @@ are positive integers'''
             raise ValueError("height must be >= 0")
         else:
             self.__height = value    
-    
+
     def area(self):
         return(self.width * self.height)
-    
+
     def perimeter(self):
         if self.width == 0 or self.height == 0:
             return(0)
-        return(2 * (self.width + self.height)
-   
+        return(2 * (self.width + self.height))
+
    def __str__(self):
       if self.width == 0 or self.height == 0:
            return("")
@@ -61,6 +61,6 @@ are positive integers'''
           if i != self.height - 1:
                rectangle += '\n'
           return(rectangle)
-   
+
    def __repr__(self):
        return(f"Rectangle({self.width}, {self.height})")
