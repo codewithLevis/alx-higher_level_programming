@@ -69,7 +69,7 @@ class Rectangle:
             rectangle += str(self.print_symbol) * self.width
             if i != self.height - 1:
                 rectangle += '\n'
-    return(rectangle)
+        return(rectangle)
 
     def _repr_(self):
         """Returns a string representation
