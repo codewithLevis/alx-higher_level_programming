@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Elevating my rectangle's functionality"""
+
+
 class Rectangle:
     '''initialize the class attribute'''
     number_of_instances = 0

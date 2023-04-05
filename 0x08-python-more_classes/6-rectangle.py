@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Elevating my rectangle's functionality"""
+
+
 class Rectangle:
 '''This class creates the private instance attributes for 
 the width and height of a rectangle. Setters are used to ensure the values
