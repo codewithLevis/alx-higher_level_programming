@@ -3,17 +3,17 @@
 
 
 class Rectangle:
-'''This class creates the private instance attributes for 
-the width and height of a rectangle. Setters are used to ensure the values
-are positive integers'''
+    '''This class creates the private instance attributes for
+    the width and height of a rectangle. Setters are used to ensure the values
+    are positive integers'''
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-    
+
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -22,11 +22,11 @@ are positive integers'''
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
-            
+
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -34,4 +34,4 @@ are positive integers'''
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            self.__height = value    
+            self.__height = value
