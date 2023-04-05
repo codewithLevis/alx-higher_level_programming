@@ -57,12 +57,12 @@ class Rectangle:
     def __str__(self):
         if self.width == 0 or self.height == 0:
             return("")
-      rectangle = ""
-      for i in range(self.height):
-          rectangle = "#" * self.width
-          if i != self.height - 1:
-               rectangle += '\n'
-          return(rectangle)
+        rectangle = ""
+        for i in range(self.height):
+            rectangle += "#" * self.width
+            if i != self.height - 1:
+                rectangle += '\n'
+        return(rectangle)
 
    def __repr__(self):
        return(f"Rectangle({self.width}, {self.height})")
