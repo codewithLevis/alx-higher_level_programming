@@ -3,45 +3,34 @@
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation(123)
+rint_indented_text( "Holberton School")
+Holberton School
+>>> print_indented_text( "Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+>>> print_indented_text( "Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+>>> print_indented_text(())
 Traceback (most recent call last):
-  ...
-TypeError: text must be a string
-
->>> text_indentation("Hello World.")
-Hello World.
+...
+TypeError: txt must be a string
+>>> print_indented_text()
+Traceback (most recent call last):
+...
+TypeError: print_indented_text() missing 1 required positional argument: 'txt'
+>>> text_indentation('Holberton. School? How are you: John'
+...                  '                                 ') #doctest: +NORMALIZE_WHITESPACE
+Holberton.
 <BLANKLINE>
->>> text_indentation("Hello World. This is a test.")
-Hello World.
+School?
 <BLANKLINE>
-This is a test.
+How are you:
 <BLANKLINE>
->>> text_indentation("Hello World: This is a test.")
-Hello World:
-<BLANKLINE>
-This is a test.
-<BLANKLINE>
->>> text_indentation("Hello World? This is a test.")
-Hello World?
-<BLANKLINE>
-This is a test.
-<BLANKLINE>
->>> text_indentation("Hello World! This is a test.")
-Hello World! This is a test.
-<BLANKLINE>
->>> text_indentation("")
-<BLANKLINE>
-
->>> text_indentation("  Hello  World.  ")
-Hello  World.
-<BLANKLINE>
->>> text_indentation("Hello  World.. This is a test.")
-Hello  World.
-<BLANKLINE>
-.
-<BLANKLINE>
-This is a test.
-<BLANKLINE>
->>> text_indentation("Hello World  ")
-Hello World.
-<BLANKLINE>
+John
