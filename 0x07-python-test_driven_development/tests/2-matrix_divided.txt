@@ -66,3 +66,4 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 # Testing the function with a matrix of inf lists and an inf divisor
 >>> matrix_divided([[float('inf'), float('inf')], [float('inf'), float('inf')]], float('inf'))
+[[nan, nan], [nan, nan]]
