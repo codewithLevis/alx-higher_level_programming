@@ -12,7 +12,7 @@ def is_empty(li):
     return True
 
 
-def lazy_matrix_mul(m_a, m_b):
+def matrix_mul(m_a, m_b):
     """ a function that multiplies 2 matrices"""
     if not isinstance(m_a, list):
         raise TypeError('m_a must be a list')
