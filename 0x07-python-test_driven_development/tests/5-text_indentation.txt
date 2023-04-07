@@ -20,7 +20,7 @@ John
 >>> text_indentation(())
 Traceback (most recent call last):
 ...
-TypeError: txt must be a string
+TypeError: text must be a string
 >>> text_indentation()
 Traceback (most recent call last):
 ...

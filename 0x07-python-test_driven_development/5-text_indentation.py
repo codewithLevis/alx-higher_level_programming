@@ -8,7 +8,7 @@ of printing is affected by three ".?:" characters
 def text_indentation(txt):
     """  function that prints a text with 2 new lines  """
     if not isinstance(txt, str):
-        raise TypeError("txt must be a string")
+        raise TypeError("text must be a string")
 
     i = 0
     while i < len(txt) and txt[i] == ' ':
