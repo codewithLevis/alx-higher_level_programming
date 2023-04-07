@@ -5,8 +5,8 @@
 :: Passing multiplicands
 
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
-array([[ 6, 10],
-       [48, 44]])
+array([[ 7, 10],
+       [15, 22]])
 >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 array([[13, 16]])
 
@@ -16,7 +16,7 @@ array([[ 30, -26,  10],
        [ 42, -36,  18]])
 
 >>> lazy_matrix_mul([[1, 5, 7]], [[3], [5], [8]])
-array([[95]])
+array([[84]])
 
 :: Passing a tuple matrix
 >>> lazy_matrix_mul(([[3, 5, 8]]), ([[1], [4], [9]]))
@@ -26,7 +26,7 @@ array([[95]])
 >>> lazy_matrix_mul(0, 0)
 Traceback (most recent call last):
     ...
-TypeError: Object arrays are not currently supported
+ValueError: Scalar operands are not allowed, use '*' instead
 >>> lazy_matrix_mul([[7, 12]], None)
 Traceback (most recent call last):
     ...
@@ -79,7 +79,7 @@ Traceback (most recent call last):
         ...
 ValueError: setting an array element with a sequence.
 
->>> lazy_matrix_mullazy_matrix_mul([[5, 2, 3], [7, 13, 2], [1, 0, 3]], [[2, 3], [6, 9]])
+>>> lazy_matrix_mul([[5, 2, 3], [7, 13, 2], [1, 0, 3]], [[2, 3], [6, 9]])
 Traceback (most recent call last):
         ...
 ValueError: shapes (3,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
@@ -88,7 +88,7 @@ ValueError: shapes (3,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
 >>> lazy_matrix_mul([[1, 2]])
 Traceback (most recent call last):
           ...
-TypeError: lazy_matrix_mullazy_matrix_mul() missing 1 required positional argument: 'm_b'
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
 :: No argeuments
 

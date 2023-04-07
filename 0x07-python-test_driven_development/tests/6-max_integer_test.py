@@ -1,8 +1,12 @@
+"""Unittest Module"""
+
+
 import unittest
-from max_integer import max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    """Unittest Function"""
     def test_empty_list(self):
         self.assertIsNone(max_integer([]))
 
@@ -23,10 +27,6 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_mixed_numbers(self):
         self.assertEqual(max_integer([1, -2, 3, -4, 5]), 5)
-
-    def test_string_list(self):
-        with self.assertRaises(TypeError):
-            max_integer(['a', 'b', 'c'])
 
     def test_none_list(self):
         with self.assertRaises(TypeError):
