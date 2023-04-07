@@ -5,7 +5,7 @@ of printing is affected by three ".?:" characters
 """
 
 
-def print_indented_text(txt):
+def text_indentation(txt):
     """  function that prints a text with 2 new lines  """
     if not isinstance(txt, str):
         raise TypeError("txt must be a string")
