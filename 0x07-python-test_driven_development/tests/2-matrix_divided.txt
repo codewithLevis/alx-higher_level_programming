@@ -1,0 +1,68 @@
+# Testing matrix_divided function
+# Importing the function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Testing the function with a simple matrix
+>>> matrix_divided([[6]], 2)
+[[3.0]]
+
+# Testing the function with a matrix of zeros
+>>> matrix_divided([[0]], 2)
+[[0.0]]
+
+# Using a negative divisor with a matrix
+>>> matrix_divided([[3, 6], [9, 12]], -3)
+[[-1.0, -2.0], [-3.0, -4.0]]
+
+# Testing the function with a matrix containing lists of different sizes
+>>> matrix_divided([[3, 6], [9, 12], [1, 2, 3]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: Each row of the matrix must have the same size
+
+# Using 0 for divisor
+>>> matrix_divided([[3, 6], [9, 12]], 0)
+Traceback (most recent call last):
+   ...
+ZeroDivisionError: division by zero
+
+# Testing the function with a matrix containing non-int or non-float elements
+>>> matrix_divided([[3, "6"], [9, 12]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Testing the function with a matrix of floats and a float divisor
+>>> matrix_divided([[4.8, 3.2], [6.2, 9.8]], 2.6)
+[[1.85, 1.23], [2.38, 3.77]]
+
+# Testing the function with a non-float or non-int divisor
+>>> matrix_divided([[4, 3.2], [6, 9.8]], (3,))
+Traceback (most recent call last):
+   ...
+TypeError: div must be a number
+
+# Testing the function with a matrix of matrices
+>>> matrix_divided([[[2, 4, 5], [3, 6, 7]], [[8, 9], [5, 4]]], 2)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Using NaN as divisor
+>>> matrix_divided([[4, 3.2], [6, 9.8]], float('nan'))
+[[nan, nan], [nan, nan]]
+
+# Using inf as divisor
+>>> matrix_divided([[4, 3.2], [6, 9.8]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+# Testing the function with a matrix of NaN lists and a NaN divisor
+>>> matrix_divided([[float('nan'), float('nan')], [float('nan'), float('nan')]], float('nan'))
+[[nan, nan], [nan, nan]]
+
+# Testing the function with a matrix of NaN lists and an inf divisor
+>>> matrix_divided([[float('nan'), float('nan')], [float('nan'), float('nan')]], float('inf'))
+[[nan, nan], [nan, nan]]
+
+# Testing the function with a matrix of inf lists and an inf divisor
+>>> matrix_divided([[float('inf'), float('inf')], [float('inf'), float('inf')]], float('inf'))
