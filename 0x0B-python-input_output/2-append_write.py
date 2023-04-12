@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def append_write(filename="", text=""):
   """appends text at the beginning of an existing file
   creates the file and writes the text if file does not exist
