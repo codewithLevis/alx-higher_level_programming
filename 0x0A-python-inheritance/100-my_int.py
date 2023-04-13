@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for MyInt subclass"""
 
+
 class MyInt(int):
     """Overides the equal method of parent class"""
     def __eq__(self, other):
