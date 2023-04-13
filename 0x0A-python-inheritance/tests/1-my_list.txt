@@ -1,0 +1,60 @@
+::Importing 
+>>> MyList = __import__('1-my_list').MyList
+>>>
+
+:: Trying Common list Operations
+
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(20)
+>>> my_list.append(30)
+>>> my_list.append(40)
+>>> my_list.append(50)
+>>> print(my_list)
+[10, 20, 30, 40, 50]
+>>> my_list.print_sorted()
+[10, 20, 30, 40, 50]
+>>> print(my_list)
+[10, 20, 30, 40, 50]
+
+:: passing single digit
+
+>>> my_list = MyList()
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0]
+>>> print(my_list)
+[0]
+>>>
+
+::Testing empty MyList object
+>>> new = MyList()
+>>> new.print_sorted()
+[]
+:: Using mixed values
+
+>>> my_list = MyList()
+>>> my_list.append(100)
+>>> my_list.append(25)
+>>> my_list.append(0)
+>>> my_list.append(-50)
+>>> my_list.append(75)
+>>> my_list.print_sorted()
+[-50, 0, 25, 75, 100]
+>>>
+
+::Trying different data type
+>>> my_dict = {'a': 1, 'b': 2, 'c': 3}
+>>> my_dict.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'print_sorted'
+>>>
+
+::Testing parent object
+
+>>> my_list = [3, 6]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
