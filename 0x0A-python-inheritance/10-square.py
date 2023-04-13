@@ -4,7 +4,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class square(Rectangle):
-    '''Class square that inherits from Rectangle'''
+    """Class square that inherits from Rectangle"""
     def __init__(self, size):
         self.__size = 0
         self.integer_validator('size', size)
