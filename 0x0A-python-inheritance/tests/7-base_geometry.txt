@@ -21,7 +21,7 @@ ValueError: age must be greater than 0
 >>> b.integer_validator("age", -5)
 Traceback (most recent call last):
 ...
-ValueError: age must be age than 0
+ValueError: age must be greater than 0
 
 :: Passingnon-integer
 >>> b.integer_validator("age", 1.5)
