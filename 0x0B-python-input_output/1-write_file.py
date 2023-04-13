@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""File and Json"""
+
 
 def write_file(filename="", text=""):
     '''Function writes a string to a text file 
