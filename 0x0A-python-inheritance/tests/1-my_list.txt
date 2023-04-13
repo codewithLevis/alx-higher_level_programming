@@ -42,8 +42,7 @@
 >>> my_list.append(75)
 >>> my_list.print_sorted()
 [-50, 0, 25, 75, 100]
->>> my_list = MyList()
->>> my_list = [3, 2, 1]
+>>> my_list = MyList([3, 2, 1])
 >>> sorted_list = my_list.print_sorted()
 >>> print(sorted_list)
 [1, 2, 3]
