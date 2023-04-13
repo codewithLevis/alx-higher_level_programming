@@ -32,7 +32,7 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 ...
 TypeError: age must be an integer
->>> bg.integer_validator("name", "John")
+>>> b.integer_validator("name", "John")
 Traceback (most recent call last):
 ...
 TypeError: name must be an integer
