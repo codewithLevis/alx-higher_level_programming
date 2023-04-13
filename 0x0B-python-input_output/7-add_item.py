@@ -8,7 +8,7 @@ filename = "add_item.json"
 if not os.path.exists(filename):
     with open(filename, 'w') as file:
         file.write('[]')
-    
+
 """Load json data from existing file, convert to python object"""
 list = load_from_json_file(filename)
 
