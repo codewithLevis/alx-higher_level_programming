@@ -3,7 +3,6 @@
 
 
 class BaseGeometry:
-    """Geometry Class"""
+    """Geometry Class""""
     def area(self):
-        raise Exception("area() is not implimented")
-    
+        raise Exception("area() is not implemented")
