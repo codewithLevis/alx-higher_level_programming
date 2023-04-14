@@ -3,6 +3,7 @@
 (list, dictionary, string, integer and boolean) for JSON serialization of an object
 """
 
+
 def class_to_json(obj):
 	"""Iterate over object attributes"""
 	return obj.__dict__			
