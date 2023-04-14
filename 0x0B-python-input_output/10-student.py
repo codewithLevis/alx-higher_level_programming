@@ -1,25 +1,30 @@
 #!/usr/bin/python3
+"""
+class student
+"""
+
 
 class Student:
-  """Initialize student attributes"""
+    """Initialize student attributes"""
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-    
+
     def to_json(self, attrs=None):
-      """the method retrieves all attributes if none is provides. 
-         Else it filters the list of attributes to include only those that are specified in the attrs list.
-      """
-        json_dict = {}
-        if attrs is None:
-            attrs = [attr_name for attr_name in dir(self) if not callable(getattr(self, attr_name))]
-        """iterates over the filtered list of attributes and adds 
-           any serializable attributes (strings and integers) to the json_dict dictionary.
         """
-        for attr_name in attrs:
-            if hasattr(self, attr_name):
-                attr_value = getattr(self, attr_name)
-                if isinstance(attr_value, (str, int)):
-                    json_dict[attr_name] = attr_value
-        return (json_dict)
+        the method retrieves all attributes if none is provides. 
+        Else it filters the list of attributes to include only
+        those that are specified in the attrs list.
+        """
+         if isinstance(attrs, list):
+            for i in attrs:
+                if not isinstance(i, str):
+                    return self.__dict__
+            my_dic = {}
+            for key, value in self.__dict__.items():
+                if key in attrs:
+                    my_dic.update({key: value})
+            return my_dic
+        else:
+            return self.__dict__
