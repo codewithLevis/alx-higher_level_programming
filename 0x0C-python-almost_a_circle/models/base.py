@@ -2,11 +2,11 @@
 """
 base of all classes in the model to manage id attribute
 class that inherits from the 'Base' class can use thid 'id'
-attribute without a need for creating a separate id management 
+attribute without a need for creating a separate id management
 system, thus preventing duplication of bugs that might potentially arise
 """
-
 import json
+
 
 class Base:
     """
