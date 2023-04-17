@@ -1,0 +1,64 @@
+:: Importing
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+
+>>> b = BaseGeometry()
+>>> b.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implimented
+
+>>> b.area(1)
+Traceback (most recent call last):
+      ...
+TypeError: area() takes 1 positional argument but 2 were given
+>>> b.integer_validator("age", 1)
+>>> b.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+>>> b.integer_validator("age", -5)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+:: Passingnon-integer
+>>> b.integer_validator("age", 1.5)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> b.integer_validator("age", "10")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> b.integer_validator("name", "John")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+>>> b.integer_validator("age", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> b.integer_validator("age", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> b.integer_validator("age", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+:: Passing more or less arguments
+>>> b.integer_validator("age", 1, 2)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+>>> b.integer_validator("age")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> b.integer_validator()
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
