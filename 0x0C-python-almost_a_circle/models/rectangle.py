@@ -36,7 +36,7 @@ class Rectangle(Base):
     def height(self):
         return (self.__height)
     
-     @height.setter
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -49,7 +49,7 @@ class Rectangle(Base):
     def x(self):
         return (self.__x)
     
-     @x.setter
+    @x.setter
     def x(self, value):
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -62,7 +62,7 @@ class Rectangle(Base):
     def y(self):
         return (self.__y)
     
-     @y.setter
+    @y.setter
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -131,8 +131,8 @@ class Rectangle(Base):
     """
 
     def __str__(self):
-        return (f"[Rectangle] {(self.id)} 
-        {self.x}/{self.y} - {self.width}/{self.height}")
+        return (f"[Rectangle] {(self.id)}\
+            {self.x}/{self.y} - {self.width}/{self.height}")
     
 
     def to_dictionary(self):
