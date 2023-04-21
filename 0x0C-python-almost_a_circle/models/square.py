@@ -18,40 +18,39 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    
     def __str__(self):
         """
         Returns a string representation of the Square instance
         """
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, 
-        self.y, self.width))
-    
+        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                  self.width))
+
     @property
     def size(self):
         """
         Getter method for the size attribute
         """
         return self.width
-    
-    @size.Getter
+
+    @size.setter
     def size(self, value):
         """sets the size attribute"""
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """
         Assigns an argument to each attribute of the Square instance
         """
         if args:
             attributes = ['id', 'size', 'x', 'y']
-            for i, args in enumerate(args):
+            for i, arg in enumerate(args):
                 setattr(self, attributes[i], arg)
-        
+
         else:
             for key, value, in kwargs.items():
                 setattr(self, key, value)
-    
+
     def to_dictionary(self):
         """
         Returns the dictionary representation of a square instance
