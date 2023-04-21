@@ -12,17 +12,17 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = 0
-        self.__y = 0
-    
-    #Gettera and setters functions
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    # Gettera and setters functions
 
     @property
     def width(self):
         return (self.__width)
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -31,11 +31,11 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         else:
             self.__width = value
-    
+
     @property
     def height(self):
         return (self.__height)
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -48,7 +48,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return (self.__x)
-    
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -61,7 +61,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return (self.__y)
-    
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
@@ -71,73 +71,35 @@ class Rectangle(Base):
         else:
             self.__y = value
 
-    """
-    Retuns:
-        int: area of the rectangle
-    """
     def area(self):
+        """Returns rectangle's area"""
         return (self.width * self.height)
-    
-    """
-    print the string representation of the rectangle insyance
-    using the # character
-    """
 
     def display(self):
+        """Desplays the rectangle"""
         for i in range(self.__y):
             print()
         for i in range(0, self.__height):
             print(" " * self.__x + "#" * self.width)
 
-    
-    """
-    Assigns an argument to each attribute using the 
-    non-key word argument syntax *args and keyword **kwargs
-    """
-    def update(self, *args,):
-        """
-        Interate over the arguments to assign each argument 
-        to the appropriate attribute, i.e. arguments are passed 
-        in the correct order ('id', 'width', 'height', 'x', 'y')
-        """
-        for i, arg in enumerate(args):
-            if i == 0:
-                self.id = arg
-            elif i == 1:
-                self.width = arg
-            elif i == 2:
-                self.height = arg
-            elif i == 3:
-                self.x = arg
-            elif i == 4:
-                self.y = arg
-    
-    """
     def update(self, *args, **kwargs):
+        """Updates value of the rectangle"""
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, attributes[i], args[i])
-        
         else:
             for key, value, in kwargs.items():
                 setattr(self, key, value)
-    """
-
-    """
-    Overides the __str__ method
-    Returns:
-        str: string representation of the rectangle
-    """
 
     def __str__(self):
-        return (f"[Rectangle] {(self.id)}\
-            {self.x}/{self.y} - {self.width}/{self.height}")
-    
+        """string representation of the rectangle"""
+        return (f"[Rectangle] ({self.id})\
+ {self.x}/{self.y} - {self.width}/{self.height}")
 
     def to_dictionary(self):
         """
         Returns the dictionary representation of a square instance
         """
-        return {"id": self.id, "width": self.width, 
-        "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
