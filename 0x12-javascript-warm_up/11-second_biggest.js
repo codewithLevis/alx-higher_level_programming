@@ -1,17 +1,19 @@
 #!/usr/bin/node
 
-const arr = process.argv.slice(2);
+let arr = process.argv.slice(2);
 
 if (arr.length === 0 || arr.length === 1) {
   console.log(0);
 } else {
-  let firstLargest = parseInt(arr[0]);
-  let secondLargest = firstLargest;
-  for (let j = 1; j < arr.length; j++) {
-    if (parseInt(arr[j]) > firstLargest) {
-      secondLargest = firstLargest;
-      firstLargest = parseInt(arr[j]);
+  arr = process.argv.slice(2).map((num) => parseInt(num));
+  arr.sort(function (a, b) {
+    return b - a;
+  });
+  const maxNum = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < maxNum) {
+      console.log(arr[i]);
+      process.exit(0);
     }
   }
-  console.log(secondLargest);
 }
