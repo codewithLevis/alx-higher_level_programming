@@ -13,15 +13,17 @@ arguments = {
         'db': argv[3],
         'port': 3306
         }
-db = MySQLdb.connect(**arguments)
-cursor = db.cursor()
-cursor.execute("""
-        SELECT cities.id, cities.name, states.name FROM cities
-        INNER JOIN states ON cities.state_id = states.id
-        ORDER BY cities.id
-        """)
-for row in cursor.fetchall():
-    print(row)
 
-cursor.close()
-db.close()
+if __name__ == '__main__':
+    db = MySQLdb.connect(**arguments)
+    cursor = db.cursor()
+    cursor.execute("""
+            SELECT cities.id, cities.name, states.name FROM cities
+            INNER JOIN states ON cities.state_id = states.id
+            ORDER BY cities.id
+            """)
+    for row in cursor.fetchall():
+        print(row)
+
+    cursor.close()
+    db.close()

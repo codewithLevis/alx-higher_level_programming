@@ -16,11 +16,12 @@ arguments = {
         'port': 3306
         }
 
-db = MySQLdb.connect(**arguments)
-cursor = db.cursor()
-cursor.execute('''
-            SELECT * FROM states
-            WHERE states.name LIKE BINARY "{}"
-            ORDER BY states.id'''.format(argv[4]))
-for row in cursor.fetchall():
-    print(row)
+if __name__ == '__main__':
+    db = MySQLdb.connect(**arguments)
+    cursor = db.cursor()
+    cursor.execute('''
+                SELECT * FROM states
+                WHERE states.name LIKE BINARY "{}"
+                ORDER BY states.id'''.format(argv[4]))
+    for row in cursor.fetchall():
+        print(row)

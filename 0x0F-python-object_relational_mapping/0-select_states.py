@@ -12,13 +12,14 @@ parameters = {
         'db': argv[3],
         'port': 3306
         }
-db = MySQLdb.connect(**parameters)
-cursor = db.cursor()
-cursor.execute('SELECT * FROM states ORDER BY states.id;')
-result = cursor.fetchall()
+if __name__ == '__main__':
+    db = MySQLdb.connect(**parameters)
+    cursor = db.cursor()
+    cursor.execute('SELECT * FROM states ORDER BY states.id;')
+    result = cursor.fetchall()
 
-for i in result:
-    print(i)
+    for i in result:
+        print(i)
 
-cursor.close()
-db.close()
+    cursor.close()
+    db.close()

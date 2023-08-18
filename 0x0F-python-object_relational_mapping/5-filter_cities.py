@@ -13,15 +13,17 @@ arguments = {
         'db': argv[3],
         'port': 3306
         }
-db = MySQLdb.connect(**arguments)
-cursor = db.cursor()
-cursor.execute("""
-        SELECT cities.name FROM cities
-        INNER JOIN states ON cities.state_id = states.id
-        WHERE states.name LIKE BINARY '{}'
-        ORDER BY cities.id
-        """.format(argv[4]))
 
-print(', '.join(city[0] for city in cursor.fetchall()))
-cursor.close()
-db.close()
+if __name__ == '__main__':
+    db = MySQLdb.connect(**arguments)
+    cursor = db.cursor()
+    cursor.execute("""
+            SELECT cities.name FROM cities
+            INNER JOIN states ON cities.state_id = states.id
+            WHERE states.name LIKE BINARY '{}'
+            ORDER BY cities.id
+            """.format(argv[4]))
+
+    print(', '.join(city[0] for city in cursor.fetchall()))
+    cursor.close()
+    db.close()

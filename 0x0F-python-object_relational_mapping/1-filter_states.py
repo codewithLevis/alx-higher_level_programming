@@ -14,14 +14,15 @@ parameters = {
         'db': argv[3],
         'port': 3306
         }
-db = MySQLdb.connect(**parameters)
-cursor = db.cursor()
-cursor.execute('''SELECT * FROM states
-        WHERE states.name LIKE BINARY "N%"
-        ORDER BY states.id''')
+if __name__ == '__main__':
+    db = MySQLdb.connect(**parameters)
+    cursor = db.cursor()
+    cursor.execute('''SELECT * FROM states
+            WHERE states.name LIKE BINARY "N%"
+            ORDER BY states.id''')
 
-for row in cursor.fetchall():
-    print(row)
+    for row in cursor.fetchall():
+        print(row)
 
-cursor.close()
-db.close()
+    cursor.close()
+    db.close()
