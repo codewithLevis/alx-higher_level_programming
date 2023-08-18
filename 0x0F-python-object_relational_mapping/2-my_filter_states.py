@@ -5,14 +5,14 @@ values in the states table of
 hbtn_0e_0_usa where name matches the argument
 """
 import MySQLdb
-from sys import argv
+from sys import sys
 
 
 arguments = {
         'host': 'localhost',
-        'user': argv[1],
-        'passwd': argv[2],
-        'db': argv[3],
+        'user': sys.argv[1],
+        'passwd': sys.argv[2],
+        'db': sys.argv[3],
         'port': 3306
         }
 
@@ -22,6 +22,6 @@ if __name__ == '__main__':
     cursor.execute('''
                 SELECT * FROM states
                 WHERE states.name LIKE BINARY "{}"
-                ORDER BY states.id'''.format(argv[4]))
+                ORDER BY states.id'''.format(sys.argv[4]))
     for row in cursor.fetchall():
         print(row)
