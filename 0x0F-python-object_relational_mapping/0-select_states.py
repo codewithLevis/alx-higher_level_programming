@@ -8,14 +8,16 @@ Usage: ./0-select_states.py root root hbtn_0e_0_usa
 import MySQLdb
 import sys
 
-parameters = {
-        'host': 'localhost',
-        'user': sys.argv[1],
-        'passwd': sys.argv[2],
-        'db': sys.argv[3],
-        'port': 3306
-        }
+
 if __name__ == '__main__':
+    parameters = {
+            'host': 'localhost',
+            'user': sys.argv[1],
+            'passwd': sys.argv[2],
+            'db': sys.argv[3],
+            'port': 3306
+            }
+
     db = MySQLdb.connect(**parameters)
     cursor = db.cursor()
     cursor.execute('SELECT * FROM states ORDER BY states.id;')
