@@ -22,7 +22,7 @@ if __name__ == '__main__':
     cursor.execute('''
                 SELECT * FROM states
                 WHERE states.name LIKE BINARY "{}"
-                ORDER BY states.id'''.format(sys.argv[4]))
+                ORDER BY states.id'''.format(sys.argv[4].split(';')))
     for row in cursor.fetchall():
         print(row)
 
