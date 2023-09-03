@@ -4,6 +4,12 @@ Module for a function that finds
 a peak in a list of unsorted integers.
 """
 def find_peak(list_of_integers):
+    '''
+    description:  function that finds
+        a peak in a list of unsorted integers.
+    params:
+        list_of_integers: list object only ofr intergers
+    '''
     if len(list_of_integers) == 0:
         return None
     low = 0
