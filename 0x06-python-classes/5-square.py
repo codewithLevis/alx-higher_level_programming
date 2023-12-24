@@ -10,10 +10,18 @@ class Square:
 
     @property
     def size(self):
-        return(self.__size)
+        """
+        returns size property
+        """
+        return self.__size
 
     @size.setter
     def size(self, value):
+        """
+        resets the value of the instance
+        param:
+            value (int): new value
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -21,9 +29,16 @@ class Square:
         self.__size = value
 
     def area(self):
-        return(self.__size ** 2)
+        """
+        finds the area of the instance
+        """
+        return self.__size ** 2
 
     def my_print(self):
+        """
+        prints abstract representation of the
+        function using the pound symbol
+        """
         if self.__size == 0:
             print("")
         else:

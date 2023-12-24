@@ -10,10 +10,18 @@ class Square:
 
     @property
     def size(self):
-        return(self._size)
+        """
+        returns the size of the squre object
+        """
+        return self._size
 
     @size.setter
     def size(self, value):
+        """
+        resets the size attribute
+        Param:
+            value (int): new value
+        """
         if not isinstance(value, (int, float)):
             raise TypeError("size must be a number")
         if value < 0:
@@ -21,34 +29,69 @@ class Square:
         self._size = value
 
     def area(self):
-        return(self.size ** 2)
+        """
+        finds the area of the square instance
+        """
+        return self.size ** 2
 
     def __eq__(self, other):
+        """
+        function to check for equality of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
-            return(self.area() == other.area())
+            return self.area() == other.area()
         return NotImplemented
 
     def __ne__(self, other):
+        """
+        function to check for equality of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
-            return(self.area() != other.area())
-        return(NotImplemented)
+            return self.area() != other.area()
+        return NotImplemented
 
     def __lt__(self, other):
+        """
+        function to check for less than of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
-            return(self.area() < other.area())
-        return(NotImplemented)
+            return self.area() < other.area()
+        return NotImplemented
 
     def __le__(self, other):
+        """
+        function to check for less thatn or
+            equality of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
-            return(self.area() <= other.area())
-        return(NotImplemented)
+            return self.area() <= other.area()
+        return NotImplemented
 
     def __gt__(self, other):
+        """
+        function to check for greater than of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
-            return(self.area() > other.area())
-        return(NotImplemented)
+            return self.area() > other.area()
+        return NotImplemented
 
     def __ge__(self, other):
+        """
+        function to check for greater than or
+            equality of square instances
+        Param:
+            other (Square): value to compare
+        """
         if isinstance(other, Square):
             return(self.area() >= other.area())
-        return(NotImplemented)
+        return NotImplemented
