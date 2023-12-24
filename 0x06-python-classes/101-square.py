@@ -77,6 +77,9 @@ class Square:
         """
         result = ""
 
+        if not self._size:
+            return result
+
         for _ in range(self._position[1]):
             result += '\n'
 
