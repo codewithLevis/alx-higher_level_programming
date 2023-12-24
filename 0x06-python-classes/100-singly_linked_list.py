@@ -1,88 +1,105 @@
 #!/usr/bin/python3
-
-"""Module defines a node of a singly linked list"""
+"""
+Module to define nodes
+"""
 
 
 class Node:
-    """Node structure for singly linked lists"""
+    """
+    defines a node of a singly linked list
+    """
     def __init__(self, data, next_node=None):
-        """initializing node members
-        Args:
-            data: data per node
-            next_node: guide to next node
-         """
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
         """
-        return the value of data property
+        get the value of data property
         """
-        return self._data
+        return self.__data
 
     @data.setter
     def data(self, value):
         """
-        params:
-            Value (int): new value
-        resets the data property of a function
+        resets the value of data property
+        Params:
+            value(int): new value
         """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        self._data = value
+        self.__data = value
 
     @property
     def next_node(self):
         """
-        function to return next node
+        get the value of next_node property
         """
-        return self._next_node
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """
-        resets the value to th next_node
-        params:
-            value (Node): new node to point to
+        resets the value of next_node property
+        Params:
+            value(int): new value
         """
-        if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object")
-        self._next_node = value
+        if value is not None and not isinstance(value, self.__class__):
+            raise ValueError("next_node must be a Node object")
+
+        self.__next_node = value
 
 
 class SinglyLinkedList:
-    """creation of singly linked list"""
+    """
+    Class defining the base singely linked list structure
+    """
     def __init__(self):
-        """head of the nodes"""
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """
-        function to insert node in sorted manner
-        param:
-            value (Node): new node to insert
+        inserts a new Node into the correct
+        sorted position in the list (increasing order)
+
+        params:
+            value (Node): value to use to create new node
         """
         new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
+
+        if self.__head is None:
+            self.__head = new_node
             return
-        if value < self.head.data:
-            new_node.next_node = self.head
-            self.head = new_node
-            return
-        current_node = self.head
-        while (current_node.next_node is not None) and
-        (current_node.next_node.data < value):
-            current_node = current_node.next_node
-        new_node.next_node = current_node.next_node
-        current_node.next_node = new_node
+
+        # else find its correct position
+
+        prev = None
+        curr = self.__head
+
+        while curr is not None:
+            if curr.data > value:
+                if prev is not None:  # curr is not self.__head
+                    prev.next_node = new_node
+                else:
+                    self.__head = new_node
+                new_node.next_node = curr
+                return
+            prev = curr
+            curr = curr.next_node
+
+        # place new_node at the end
+        prev.next_node = new_node
 
     def __str__(self):
-        """string rep of the square value"""
-        nodes = []
-        current_node = self.head
-        while current_node is not None:
-            nodes.append(str(current_node.data))
-            current_node = current_node.next_node
-        return "\n".join(nodes)
+        """
+        computes the printable representation of the list
+        one node number by line
+        """
+        data = []
+        trav = self.__head
+
+        while trav is not None:
+            data.append(str(trav.data))
+            trav = trav.next_node
+
+        return "\n".join(data)

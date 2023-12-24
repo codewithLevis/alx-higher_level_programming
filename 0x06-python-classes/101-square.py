@@ -65,14 +65,27 @@ class Square:
         if self.size == 0:
             print()
             return
-        for i in range(self.position[1]):
+        for i in range(self._position[1]):
             print()
-        for i in range(self.size):
+        for i in range(self._size):
             print(" " * self.position[0], end="")
-            print("#" * self.size)
+            print("#" * self._size)
 
     def __str__(self):
         """
         function to print the string rep of the square
         """
-        return self.my_print()
+        result = ""
+
+        for _ in range(self._position[1]):
+            result += '\n'
+
+        for _ in range(self.size):
+            result += " " * self._position[0]
+
+            if _ < self._size - 1:
+                result += ("#" * self._size) + '\n'
+            else:
+                result += ("#" * self._size)
+
+        return result
