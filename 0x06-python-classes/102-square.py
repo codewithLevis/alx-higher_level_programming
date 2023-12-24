@@ -93,5 +93,5 @@ class Square:
             other (Square): value to compare
         """
         if isinstance(other, Square):
-            return(self.area() >= other.area())
+            return self.area() >= other.area()
         return NotImplemented
