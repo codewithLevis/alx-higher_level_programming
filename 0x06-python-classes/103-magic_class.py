@@ -11,7 +11,7 @@ class MagicClass:
 
     @property
     def radius(self):
-        return(self.__radius)
+        return self.__radius
 
     @radius.setter
     def radius(self, value):
@@ -20,7 +20,7 @@ class MagicClass:
         self.__radius = value
 
     def area(self):
-        return(self.__radius ** 2 * math.pi)
+        return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        return(2 * math.pi * self.__radius)
+        return 2 * math.pi * self.__radius
