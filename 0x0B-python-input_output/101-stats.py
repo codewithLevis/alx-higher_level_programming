@@ -75,6 +75,8 @@ def log_parse():
         line = sys.stdin.readline()
         counter += 1
 
+    print_logs()
+
 
 log_parse()
 
